@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Digital Suitcase — Pack Smart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="logo">The Digital <span>Suitcase</span></a>
+    <div class="stepper">
+      <span class="step active">1 Destination</span>
+      <span>→</span><span class="step">2 Pack</span>
+      <span>→</span><span class="step">3 Result</span>
+    </div>
+    <button id="themeBtn" class="theme" aria-label="Toggle theme">☾</button>
+  </header>
+
+  <main>
+    <section id="destinationView" class="view active">
+      <div class="intro">
+        <p class="eyebrow">✦ YOUR NEXT ADVENTURE</p>
+        <h1>Where are we<br><em>packing for?</em></h1>
+        <p>Choose a destination, then build your suitcase. Every item matters.</p>
+      </div>
+      <div class="destination-grid" id="destinationGrid"></div>
+    </section>
+
+    <section id="packingView" class="view">
+      <div class="packing-header">
+        <button class="back-btn" onclick="goToDestinations()">← Change destination</button>
+        <div>
+          <p class="eyebrow">YOUR TRIP</p>
+          <h2 id="tripTitle"></h2>
+          <p id="tripMeta"></p>
+        </div>
+        <div class="challenge" id="challenge"></div>
+      </div>
+
+      <div class="packing-layout">
+        <aside class="item-panel">
+          <div class="panel-title"><h3>Choose your items</h3><span>Click to pack / unpack</span></div>
+          <div id="itemGrid" class="item-grid"></div>
+        </aside>
+
+        <section class="suitcase-area">
+          <div class="capacity-row">
+            <span>SUITCASE CAPACITY</span>
+            <strong id="capacityText">0 / 10</strong>
+          </div>
+          <div class="capacity-bar"><div id="capacityFill"></div></div>
+
+          <div class="suitcase">
+            <div class="handle"></div>
+            <div class="case-top"></div>
+            <div class="case-body">
+              <div class="suitcase-label">MY TRIP ✈</div>
+              <div class="packed-items" id="packedItems">
+                <div class="empty-state">Your suitcase is waiting...</div>
+              </div>
+            </div>
+            <div class="wheel left"></div><div class="wheel right"></div>
+          </div>
+
+          <button id="analyzeBtn" class="analyze-btn" disabled>Analyze My Packing →</button>
+        </section>
+      </div>
+    </section>
+
+    <section id="resultView" class="view result-view">
+      <div class="result-card" id="resultCard"></div>
+      <button class="restart-btn" onclick="restart()">✦ Plan another trip</button>
+    </section>
+  </main>
+
+  <footer>Made for curious travelers · Pack smart. Travel ready. 🎒</footer>
+  <script src="script.js"></script>
+</body>
+</html>
